@@ -12,3 +12,20 @@ class Node:
   
   def get_value(self):
     return self.value
+
+## Create Stack class:
+class Stack:
+  def __init__(self, limit=1000):
+    self.top_item = None
+    self.size = 0
+    self.limit = limit
+  
+  def push(self, value):
+    if self.has_space():
+      item = Node(value)
+      item.set_next_node(self.top_item)
+      self.top_item = item
+      self.size += 1
+      print("Adding {} to the pizza stack!".format(value))
+    else:
+      print("No room for {}!".format(value))
