@@ -15,6 +15,19 @@ class MinHeap:
 
   # END OF HEAP HELPER METHODS  
   
+  def retrieve_min(self):
+    if self.count == 0:
+      print("No items in heap")
+      return None
+  	
+    min = self.heap_list[1]
+    print("Removing: {0} from {1}".format(min, self.heap_list))
+    self.heap_list[1] = self.heap_list[self.count]
+    self.heap_list.pop()
+    self.count -= 1
+    print("Last element moved to first: {0}".format(self.heap_list))
+    return min
+  
   def add(self, element):
     print("Adding {element} to {list}.".format(element = element, list = self.heap_list))
     self.count +=1
